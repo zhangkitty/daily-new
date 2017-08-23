@@ -1,0 +1,329 @@
+html {
+    color: #222;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0 auto;
+    max-width: 1549px;
+    min-width: 1240px;
+    padding: 60px 10px 0;
+}
+.btn {
+    outline: none;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 0 18px;
+    line-height: 30px;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 1px solid #4F5E96;
+    cursor: pointer;
+    background-color: #fff;
+    color: #4F5E96;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #4F5E96;
+}
+.btn:hover {
+    color: #fff;
+    background-color: #3F4C7D;
+}
+.sel {
+    width: 150px;
+    height: 30px;
+    border-radius: 3px;
+}
+.queries {
+    line-height: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+    padding-right: 220px;
+    position: relative;
+}
+.form-item-box {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    font-weight: normal;
+}
+.form-item {
+    margin-top: 12px;
+    margin-right: 120px;
+}
+.form-item > div {
+    display: inline-block;
+}
+.form-item > div + div {
+    margin-left: 35px;
+}
+.form-item span {
+    display: inline-block;
+    width: 80px;
+    text-align: justify;
+}
+.form-item-actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 220px;
+    text-align: right;
+}
+.form-item-actions .btn + .btn {
+    margin-left: 40px;
+}
+
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    width: 300px;
+    height: 240px;
+    padding: 10px 11px;
+    flex: 300px 1 0;
+    transition: all 0.5s ease;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.product-item:hover,
+.product-item.product-edit-active {
+    border-color: #4F5E96;
+}
+.product-item-padding {
+    border: none;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin-top: 0;
+}
+
+.product-item > h4 {
+    margin: 0 auto 10px;
+    padding: 2px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+    color: #222;
+    background-color: #e8e8e8;
+}
+
+.product-info {
+    display: flex;
+    height: calc(100% - 30px);
+}
+
+.product-img-wrapper {
+    position: relative;
+    width: 140px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.product-img {
+    width: 100%;
+    max-height: 100%;
+}
+
+.product-tools {
+    position: absolute;
+    text-align: center;
+    pointer-events: none;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.product-item:hover:not(.product-edit-active) .product-tools {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.tool-right {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 12px);
+}
+
+.tool-bottom {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 12px);
+}
+
+.tool-left {
+    position: absolute;
+    left: 0;
+    top: calc(50% - 12px);
+}
+
+article.product-item:nth-child(4n + 1) .tool-left,
+article.product-item:nth-child(4n) .tool-right,
+article.product-item:nth-child(-n + 4) .tool-top,
+article.product-item:nth-last-of-type(-n + 4) .tool-bottom,
+article.product-item:first-child .tool-left,
+article.product-item:nth-last-of-type(-n + 1) .tool-right{
+    cursor: not-allowed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.product-description {
+    position: relative;
+    margin-left: 10px;
+    height: 100%;
+}
+
+.product-description-item {
+    padding-left: 58px;
+    position: relative;
+}
+.product-description-item::before {
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    font-weight: lighter;
+    vertical-align: middle;
+}
+.product-description-item + .product-description-item {
+    margin-top: 14px;
+}
+.product-description-item-btm {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    line-height: 21px;
+}
+.product-image-no {
+    display: inline-block;
+    width: 44px;
+    text-align: center;
+    color: #fff;
+    background-color: #4F5E96;
+}
+.product-img-edit {
+    display: none;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.product-item:hover:not(.product-edit-active) .product-img-edit {
+    display: inline-block;
+    height: 100%;
+}
+
+
+.icon-arrow {
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: #000 0 0 4px 0;
+    background-image: url(assets/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.icon-arrow:hover {
+    background-image: url(assets/arrow-active.svg);
+    background-color: #4F5E96;
+}
+.icon-left {
+
+}
+.icon-right {
+    transform: rotate(180deg);
+}
+.icon-top {
+    transform: rotate(90deg);
+}
+.icon-bottom {
+    transform: rotate(-90deg);
+}
+.icon-edit {
+    width: 16px;
+    height: 16px;
+    background-image: url(assets/editable.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon-edit:hover {
+    background-image: url(assets/edit-active.svg);
+}
+
+.product-edit-box {
+    position: absolute;
+    pointer-events: none;
+    background-color: #fff;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height .5s ease;
+}
+.product-edit-active .product-edit-box {
+    display: block;
+    height: 108px;
+    pointer-events: auto;
+    padding: 20px 55px;
+    border-top: 1px solid #E8E8E8;
+}
+.product-edit-box {
+    font-weight: lighter;
+}
+.product-edit-box > div {
+    text-align: center;
+}
+.product-edit-box input {
+    width: 70px;
+    outline: none;
+    text-align: center;
+}
+.edit-cancel, .edit-ok {
+    margin-top: 16px;
+    padding: 0 32px;
+}
+
+.force-wrap {
+    flex: 100% 0 0;
+}
+.animate-help {
+    transition: all .5s linear;
+}
+.product-item-less {
+    flex: 300px 1 0;
+    margin-right: 10px;
+}
+.product-item-more {
+    flex: 0 0 0;
+    margin-right: 0;
+}
+.product-item-less.product-item-less-final {
+    flex: 0 0 0;
+    margin-right: 0;
+}
+.product-item-more.product-item-more-final {
+    flex: 300px 1 0;
+    margin-right: 10px;
+}

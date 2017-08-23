@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义编辑</title>
+    <link rel="stylesheet" href="daily-new.css">
+</head>
+<body>
+    <header class="queries">
+        <form action="">
+            <div class="form-item-box">
+                <div class="form-item">
+                    <div>
+                        <span>站点</span>
+                        <select class="sel" name="site" id="site">
+                            <option value="xx">mdzz</option>
+                            <option value="1">dsa</option>
+                            <option value="2">dasd</option>
+                            <option value="3">cc</option>
+                        </select>
+                    </div><div>
+                        <span>Daily new日期</span>
+                        <select class="sel" name="site" id="data">
+                            <option value="xx">mdzz</option>
+                            <option value="1">dsa</option>
+                            <option value="2">dasd</option>
+                            <option value="3">cc</option>
+                        </select>
+                    </div><div>
+                        <button class="btn">
+                        显示商品
+                        </button>
+                     </div>
+                </div>
+                <div class="form-item">
+                    <div>
+                        <span>
+                        当前排序
+                    </span>
+                        <select class="sel" name="site" id="rule">
+                            <option value="xx">mdzz</option>
+                            <option value="1">dsa</option>
+                            <option value="2">dasd</option>
+                            <option value="3">cc</option>
+                        </select>
+                    </div><div>
+                        <button class="btn">
+                            确认重新排序
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-item-actions">
+                <button class="btn">
+                    操作记录
+                </button><button class="btn btn-primary">
+                    保存修改
+                </button>
+            </div>
+        </form>
+    </header>
+    <div class="products">
+        <article class="product-item">
+            <h4>
+                jacket1
+            </h4>
+            <div class="product-info">
+                <div class="product-img-wrapper">
+                    <img class="product-img" src="http://img.romwe.com/images/romwe.com/201703/1488964634908226083.jpg" alt="">
+                    <div class="product-tools">
+                        <button class="icon-arrow icon-left tool-left"></button>
+                        <button class="icon-arrow icon-right tool-right"></button>
+                        <button class="icon-arrow icon-top tool-top"></button>
+                        <button class="icon-arrow icon-bottom tool-bottom"></button>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <div class="product-description-item" data-title="版块名称">
+                        备货款
+                    </div>
+                    <div class="product-description-item" data-title="一级分类">
+                        Accessories
+                    </div>
+                    <div class="product-description-item" data-title="二级分类">
+                        Embroidery Dresses
+                    </div>
+                    <div class="product-description-item" data-title="图片来源">
+                        挂拍图
+                    </div>
+                    <div class="product-description-item product-description-item-btm" data-title="图片编号">
+                        <span class="product-image-no">1</span>
+                        <span class="product-img-edit icon-edit"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-edit-box">
+                <div>
+                    图片编号
+                    <input type="text" value="1">
+                </div>
+                <div>
+                    <button class="edit-cancel btn">取消</button>
+                    <button class="edit-ok btn btn-primary">确定</button>
+                </div>
+            </div>
+        </article>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        function getLinItemCount() {
+          return 4;
+        }
+        $(function addPadding() {
+          for (var i = 0; i < 100; i ++) {
+            const $ele = $('.product-item').eq(0).clone();
+            $ele.find('h4').text('jacket' + (i + 2))
+            $ele.find('.product-image-no').text(i + 2);
+            $ele.find('input').val(i + 2);
+            $('.products').append($ele);
+          }
+          for (var i = 0; i < 3; i++)
+            $('.products').append($('<div class="product-item product-item-padding"></div>'));
+        });
+        $(function processItem() {
+          function doChange(from, target, ctx) {
+            const $ctx = $(ctx);
+            return doAnimation(from, target, function () {
+              const l = Math.abs(target - from);
+              const op = l / (target - from);
+              const arr = new Array(l).fill(0).map(function (p1, idx) {
+                return from + op * (idx + 1);
+              });
+              arr.forEach(function (p1) {
+                const temp = $('.product-item:nth-of-type(' + (p1 + 1) + ')');
+                temp.find('.product-image-no').text(p1 + 1 - op);
+                temp.find('input').val(p1 + 1 - op);
+              });
+              $ctx.find('.product-image-no').text(target + 1);
+              $ctx.find('input').val(target + 1);
+              $ctx['insert' + (op > 0 ? 'After' : 'Before')]($('article.product-item:nth-of-type(' + (target + 1) + ')'));
+            });
+          }
+          const actions = {
+            'product-img-edit': function ($target) {
+              $(this).addClass('product-edit-active');
+            },
+            'edit-cancel': function ($target) {
+              $(this).removeClass('product-edit-active');
+            },
+            'edit-ok': function ($target) {
+              const target = parseInt($target.parent().parent().find('input').val(), 10) - 1;
+              const from = $('.product-item').index(this);
+              $(this).removeClass('product-edit-active');
+              doChange(from, target, this);
+            },
+            'icon-arrow': function ($target) {
+                const action = {
+                  left: -1,
+                  top: -4,
+                  right: 1,
+                  bottom: 4
+                };
+                const ac = $target.attr('class').split(/\s+/).filter(function (cls) {
+                  return cls.indexOf('tool-') === 0;
+                }).map(function (item) {
+                  return item.slice('tool-'.length);
+                });
+                const from = $('.product-item').index(this);
+                doChange(from, from + action[ac], this);
+            },
+          };
+          const keys = Object.keys(actions);
+          $('.product-item').click(function (e) {
+            const $target = $(e.target);
+            const that = this;
+            keys.forEach(function (key) {
+              if ($target.hasClass(key)) {
+                actions[key].call(that, $target);
+              }
+            });
+          });
+        });
+    </script>
+    <script src="animate.js"></script>
+</body>
+</html>
