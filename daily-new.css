@@ -42,6 +42,7 @@ body {
     margin-right: 10px;
     padding-right: 220px;
     position: relative;
+    min-width: 1500px;
 }
 .form-item-box {
     display: flex;
@@ -51,7 +52,7 @@ body {
 }
 .form-item {
     margin-top: 12px;
-    margin-right: 120px;
+    margin-right: 10px;
 }
 .form-item > div {
     display: inline-block;
@@ -61,15 +62,16 @@ body {
 }
 .form-item span {
     display: inline-block;
-    width: 80px;
+    width: 90px;
     text-align: justify;
 }
 .form-item-actions {
     position: absolute;
     right: 0;
-    top: 0;
+    bottom: 0;
     width: 220px;
     text-align: right;
+    display: flex;
 }
 .form-item-actions .btn + .btn {
     margin-left: 40px;

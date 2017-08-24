@@ -3,11 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>自定义编辑</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="    https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="daily-new.css">
 </head>
 <body>
+<div class="modal fade" id = "mymodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document" style="top:calc((100% - 600px)/2)">
+        <div class="modal-content" >
+            <div style="height: 600px;overflow: scroll">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div><div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div><div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div><div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+                <div>slfdjlf</div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <header class="queries">
-        <form action="">
+        <form >
             <div class="form-item-box">
                 <div class="form-item">
                     <div>
@@ -27,7 +81,7 @@
                             <option value="3">cc</option>
                         </select>
                     </div><div>
-                        <button class="btn">
+                        <button type="button" class="btn">
                         显示商品
                         </button>
                      </div>
@@ -44,21 +98,28 @@
                             <option value="3">cc</option>
                         </select>
                     </div><div>
-                        <button class="btn">
+                        <button type="button" class="btn">
                             确认重新排序
                         </button>
                     </div>
                 </div>
+                <div class="form-item" style="margin-left: 30px">
+                    <button type="button" disabled = 'true' class="btn back">回退</button>
+                    <button type="button" disabled = 'true' class="btn forward" style="margin-left: 1px">前进</button>
+                </div>
             </div>
             <div class="form-item-actions">
-                <button class="btn">
+                <button type="button" class="btn" data-toggle="modal" data-target="#mymodal">
                     操作记录
-                </button><button class="btn btn-primary">
+                </button>
+                <button type="button" class="btn btn-primary">
                     保存修改
                 </button>
             </div>
+
         </form>
     </header>
+
     <div class="products">
         <article class="product-item">
             <h4>
@@ -105,8 +166,9 @@
             </div>
         </article>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script>
+        var a = []
+        var b = []
         function getLinItemCount() {
           return 4;
         }
@@ -151,6 +213,7 @@
               const target = parseInt($target.parent().parent().find('input').val(), 10) - 1;
               const from = $('.product-item').index(this);
               $(this).removeClass('product-edit-active');
+              a.push([from,target,this])
               doChange(from, target, this);
             },
             'icon-arrow': function ($target) {
@@ -166,6 +229,7 @@
                   return item.slice('tool-'.length);
                 });
                 const from = $('.product-item').index(this);
+                a.push([from,from + action[ac],this])
                 doChange(from, from + action[ac], this);
             },
           };
@@ -176,9 +240,37 @@
             keys.forEach(function (key) {
               if ($target.hasClass(key)) {
                 actions[key].call(that, $target);
+                if(a.length!=0){
+                    $('.back').attr("disabled",false)
+                }
+                if(b.length!=0){
+                    $('.forward').attr("disabled",false)
+                }
               }
             });
           });
+            $('.back').click(function(e){
+                const temp = a.pop()
+                b.push(temp)
+                if(a.length==0){
+                    $('.back').attr("disabled",true)
+                }
+                if(b.length!=0){
+                    $('.forward').attr("disabled",false)
+                }
+                doChange(temp[1],temp[0],temp[2])
+            })
+            $('.forward').click(function(e){
+                const temp = b.pop()
+                a.push(temp)
+                if(b.length==0){
+                    $('.forward').attr("disabled",true)
+                }
+                if(a.length!=0){
+                    $('.back').attr("disabled",false)
+                }
+                doChange(temp[1],temp[0],temp[2])
+            })
         });
     </script>
     <script src="animate.js"></script>
