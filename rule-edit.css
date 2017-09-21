@@ -1,0 +1,304 @@
+* {
+    font-size: 12px;
+}
+
+.title h1 {
+    font-family: SourceHanSansCN-Bold;
+    font-size: 21px;
+    color: #333333;
+    letter-spacing: 0.6px;
+    margin-top: 33px;
+}
+
+.title div {
+    margin-top: 41px;
+}
+
+.title label {
+    font-family: PingFangHK-Medium;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: 0.4px;
+    margin-left: 10px;
+}
+
+details {
+    margin: 0;
+}
+
+#container {
+    padding: 40px 0;
+}
+
+.top-rule > ul {
+    box-sizing: border-box;
+    padding: 30px 60px;
+}
+
+.top-rule-2 > ul {
+    padding: 0;
+}
+
+.rule-detail-mid > * {
+    padding: 30px 60px;
+}
+
+.rule-detail-mid > article {
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.rule-detail-mid > article > * {
+    vertical-align: middle;
+}
+
+.name {
+    font-family: PingFangHK-Medium;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: 0.4px;
+}
+
+.input {
+    width: 285px;
+    height: 36px;
+    margin-left: 16px;
+}
+
+.btn {
+    outline: none;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 0 18px;
+    line-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #4F5E96;
+    cursor: pointer;
+    background-color: #fff;
+    color: #4F5E96;
+    color: #fff;
+    background-color: #4F5E96;
+}
+
+.save {
+    float: right;
+}
+
+.longadd {
+    background: #E8E8E8;
+    height: 30px;
+    line-height: 30px;
+}
+
+.textadd {
+    margin-left: 20px;
+}
+
+.v {
+    margin-right: 20px;
+    float: right;
+}
+
+.select {
+    height: 30px;
+    line-height: 30px;
+}
+
+.select:hover {
+    background: #F0F0F0;
+}
+
+.container {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    width: 100%;
+}
+
+.closetag {
+    outline: none;
+    box-sizing: border-box;
+    height: 30px;
+    padding: 0 18px;
+    line-height: 30px;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 1px solid #4F5E96;
+    cursor: pointer;
+    background-color: #fff;
+    color: #4F5E96;
+    margin-right: 10px;
+    display: none;
+}
+
+.closetag:hover::after {
+    content: 'x';
+    position: absolute;
+}
+
+.selectclassification {
+    width: 150px;
+    height: 30px;
+    margin-top: 30px;
+}
+
+.cat-rule-title {
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    width: 140px;
+    border: 1px solid rgba(149,149,149,1);
+    border-radius: 1px;
+    cursor: move;
+    /*position: relative;*/
+    background: rgba(246,246,246,1);
+    border-radius: .4em;
+    height: 28px;
+    line-height: 30px;
+    margin-left: 60px;
+    margin-right: 20px;
+    flex: 0 0 132px;
+    padding-left: 16px;
+}
+
+.onelineclassification {
+    padding: 30px 0;
+}
+
+.onelineclassification > div {
+    margin-bottom: 20px;
+}
+
+.add {
+
+}
+
+.addunit {
+    display: inline-block;
+}
+
+.addAll {
+    height: 248px;
+    width: 175px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    position: absolute;
+    display: none;
+}
+
+.closespan {
+    float: right;
+    width: 25px;
+}
+
+.closeDetail {
+    display: none;
+}
+
+#topRuleAdd {
+    list-style: none;
+}
+
+#container {
+    width: 1200px;
+    height: 30px;
+}
+
+#topRuleAddContainer {
+    width: 1200px;
+    height: 30px;
+}
+
+#topRuleAdd > li {
+    height: 30px;
+    line-height: 30px;
+}
+
+ul#topRuleAdd {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+}
+
+#topRuleAdd > li:hover {
+    background: #FFFFFF;
+}
+
+header {
+    height: 30px;
+    width: 1200px;
+    background: #E8E8E8;
+    line-height: 30px;
+    padding-left: 15px;
+}
+
+.rule-detail-mid .header {
+    width: 150px;
+    height: 30px;
+}
+.rule-detail>li{
+    margin-bottom: 10px;
+}
+
+.top-rule-2 ul.rule-detail{
+   padding: 0px 0px;
+}
+
+.top-rule-2 .rule-detail-mid  article{
+    display: flex;
+    align-items: start;
+    padding: 0px 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.rule-detail-mid .rule-detail {
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+}
+
+#titlename {
+    height: 36px;
+    width: 285px;
+}
+
+.buttonclassification:hover::after {
+    content: 'x';
+}
+
+.close-btn {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 50%;
+    transform: translate(-14px, -50%);
+    width: 13px;
+    height: 13px;
+    background-repeat: no-repeat;
+    background-image: url(./assets/close.svg);
+}
+
+.cat-rule-title:hover .littleclose {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.littleclose {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    width: 18px;
+    height: 18px;
+    background-color: #E8E8E8;
+    border-radius: 50%;
+    background-image: url('./assets/close.svg');
+    background-size: 7px 7px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity .3s ease;
+    top:-10px;
+    right: -10px;
+    cursor: pointer;
+}
+

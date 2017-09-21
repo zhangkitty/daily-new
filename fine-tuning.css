@@ -72,6 +72,7 @@ body {
     width: 220px;
     text-align: right;
     display: flex;
+    top:11px;
 }
 .form-item-actions .btn + .btn {
     margin-left: 40px;
