@@ -2,29 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="753e7361-f70d-4678-bba3-e27f7c4d5689" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/daily-new.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/daily-new2.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/43435(2).txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dailyjs/ejs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fine-tuning.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jedate/jquery-1.7.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jedate/jquery.jedate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jedate/jquery.jedate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jedate/skin/jedate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rule-edit.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rule-edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rule-edit.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/package.json" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/daily-new.css" afterPath="$PROJECT_DIR$/fine-tuning.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animate.js" afterPath="$PROJECT_DIR$/animate.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/归档.zip" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shCircleLoader" afterPath="$PROJECT_DIR$/shCircleLoader" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fine-tuning.css" afterPath="$PROJECT_DIR$/fine-tuning.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fine-tuning.html" afterPath="$PROJECT_DIR$/fine-tuning.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rule-edit.css" afterPath="$PROJECT_DIR$/rule-edit.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rule-edit.html" afterPath="$PROJECT_DIR$/rule-edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rule-edit.js" afterPath="$PROJECT_DIR$/rule-edit.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,25 +22,107 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="rule-edit.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rule-edit.css">
+    <leaf>
+      <file leaf-file-name="fine-tuning.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fine-tuning.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="249" column="25" lean-forward="false" selection-start-line="249" selection-start-column="25" selection-end-line="249" selection-end-column="25" />
+            <state relative-caret-position="415">
+              <caret line="173" column="35" lean-forward="false" selection-start-line="173" selection-start-column="35" selection-end-line="173" selection-end-column="35" />
+              <folding>
+                <element signature="n#script#5;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="43435(2).txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/43435(2).txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="57" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rule-edit.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rule-edit.js">
+      <file leaf-file-name="fine-tuning.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fine-tuning.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="248" column="47" lean-forward="true" selection-start-line="248" selection-start-column="47" selection-end-line="248" selection-end-column="47" />
+            <state relative-caret-position="324">
+              <caret line="165" column="91" lean-forward="true" selection-start-line="165" selection-start-column="91" selection-end-line="165" selection-end-column="91" />
               <folding>
-                <element signature="e#1671#1719#0" expanded="false" />
-                <element signature="e#2206#7071#0" expanded="false" />
+                <element signature="e#95#138#0" expanded="false" />
+                <element signature="e#167#213#0" expanded="false" />
+                <element signature="n#!!block;n#doChange#0;n#!!block;n#processItem#0" expanded="false" />
+                <element signature="e#329#957#0" expanded="false" />
+                <element signature="e#472#519#0" expanded="false" />
+                <element signature="e#554#737#0" expanded="false" />
+                <element signature="e#982#2951#0" expanded="false" />
+                <element signature="e#1027#1295#0" expanded="false" />
+                <element signature="e#1124#1220#0" expanded="false" />
+                <element signature="e#1341#1540#0" expanded="false" />
+                <element signature="e#1580#1637#0" expanded="false" />
+                <element signature="e#1684#2442#0" expanded="false" />
+                <element signature="e#1937#1984#0" expanded="false" />
+                <element signature="e#1988#2436#0" expanded="false" />
+                <element signature="e#2049#2428#0" expanded="false" />
+                <element signature="e#2481#2946#0" expanded="false" />
+                <element signature="e#2504#2584#0" expanded="false" />
+                <element signature="e#2660#2712#0" expanded="false" />
+                <element signature="e#2734#2786#0" expanded="false" />
+                <element signature="e#3032#3406#0" expanded="false" />
+                <element signature="e#3122#3400#0" expanded="false" />
+                <element signature="e#3157#3394#0" expanded="false" />
+                <element signature="e#3238#3293#0" expanded="false" />
+                <element signature="e#3328#3386#0" expanded="false" />
+                <element signature="e#3461#3598#0" expanded="false" />
+                <element signature="e#3488#3594#0" expanded="false" />
+                <element signature="e#3630#3893#0" expanded="false" />
+                <element signature="e#3724#3770#0" expanded="false" />
+                <element signature="e#3801#3851#0" expanded="false" />
+                <element signature="e#3928#4191#0" expanded="false" />
+                <element signature="e#4023#4072#0" expanded="false" />
+                <element signature="e#4102#4149#0" expanded="false" />
+                <element signature="e#4772#5515#0" expanded="false" />
+                <element signature="e#4921#5509#0" expanded="false" />
+                <element signature="e#4993#5508#0" expanded="false" />
+                <element signature="e#5177#5330#0" expanded="false" />
+                <element signature="e#5367#5472#0" expanded="false" />
+                <element signature="e#5532#5559#0" expanded="false" />
+                <element signature="e#5733#6891#0" expanded="false" />
+                <element signature="e#5925#6041#0" expanded="false" />
+                <element signature="e#6084#6315#0" expanded="false" />
+                <element signature="e#6352#6463#0" expanded="false" />
+                <element signature="e#6506#6539#0" expanded="false" />
+                <element signature="e#6595#6776#0" expanded="false" />
+                <element signature="e#6638#6701#0" expanded="false" />
+                <element signature="e#6706#6770#0" expanded="false" />
+                <element signature="e#6813#6886#0" expanded="false" />
+                <element signature="e#7067#7149#0" expanded="false" />
+                <element signature="e#7283#8264#0" expanded="false" />
+                <element signature="e#7744#8258#0" expanded="false" />
+                <element signature="e#7816#8257#0" expanded="false" />
+                <element signature="e#7932#8085#0" expanded="false" />
+                <element signature="e#8122#8227#0" expanded="false" />
+                <element signature="e#8338#9337#0" expanded="false" />
+                <element signature="e#8437#8457#0" expanded="false" />
+                <element signature="e#8526#8566#0" expanded="false" />
+                <element signature="e#8575#9333#0" expanded="false" />
+                <element signature="e#8752#9332#0" expanded="false" />
+                <element signature="e#8785#9325#0" expanded="false" />
+                <element signature="e#9395#10355#0" expanded="false" />
+                <element signature="e#9905#10352#0" expanded="false" />
+                <element signature="e#9974#10348#0" expanded="false" />
+                <element signature="e#10041#10186#0" expanded="false" />
+                <element signature="e#10221#10322#0" expanded="false" />
+                <marker date="1509328029000" expanded="false" signature="4597:4707" ph="..." />
+                <marker date="1509328029000" expanded="false" signature="7336:7446" ph="..." />
+                <marker date="1509328029000" expanded="false" signature="9017:9068" ph="..." />
+                <marker date="1509328029000" expanded="false" signature="9133:9184" ph="..." />
+                <marker date="1509328029000" expanded="false" signature="9237:9276" ph="..." />
+                <marker date="1509328029000" expanded="false" signature="9583:9693" ph="..." />
               </folding>
             </state>
           </provider>
@@ -68,46 +135,47 @@
       <list>
         <option value="package_json" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dailyjs</find>
-      <find>url</find>
-      <find>rule_id</find>
-      <find>debugger</find>
-      <find>product-item</find>
-      <find>ok</find>
-      <find>$(&quot;#time&quot;).jeDate(start)</find>
-      <find>reco</find>
+      <find>data-val</find>
+      <find>opition</find>
+      <find>data.push($</find>
       <find>console.log</find>
+      <find>return</find>
+      <find>param</find>
       <find>select</find>
-      <find>trig</find>
-      <find>chang</find>
-      <find>option</find>
-      <find>optin</find>
-      <find>loader</find>
-      <find>form-item-actions</find>
-      <find>rule</find>
-      <find>form-item</find>
-      <find>de</find>
-      <find>templateTop2</find>
-      <find>templateTop3</find>
-      <find>rule-detail-mid</find>
-      <find>draggable</find>
-      <find>templateTop</find>
-      <find>rule-detail</find>
-      <find>h3</find>
-      <find>cat-rule-title</find>
-      <find>arti</find>
-      <find>hr</find>
+      <find>alert</find>
+      <find>actions</find>
+      <find>submit</find>
+      <find>editCb</find>
+      <find>edit</find>
+      <find>..</find>
+      <find>processItem()</find>
+      <find>http://product1.mywayectest.org/admin27</find>
+      <find>site</find>
+      <find>sanjiao</find>
+      <find>http</find>
+      <find>iskey</find>
+      <find>debugger</find>
+      <find>e.originalEvent.dataTransfer.setData('text/plain', 'node');</find>
+      <find>e.originalEvent.dataTransfer.setData</find>
       <find>change</find>
+      <find>process</find>
+      <find>doc</find>
+      <find>conso</find>
+      <find>...</find>
+      <find>fine-tuing</find>
+      <find>product1.mywayectest.org/admin27</find>
+      <find>时间不能为空</find>
     </findStrings>
     <replaceStrings>
       <replace>15s</replace>
+      <replace>..</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -125,7 +193,6 @@
         <option value="$PROJECT_DIR$/接口文档1.txt" />
         <option value="$PROJECT_DIR$/接口文档2.txt" />
         <option value="$PROJECT_DIR$/index1.html" />
-        <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/cleaning.ejs" />
         <option value="$PROJECT_DIR$/js/ejs.js" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -137,13 +204,26 @@
         <option value="$PROJECT_DIR$/my.html" />
         <option value="$PROJECT_DIR$/my.js" />
         <option value="$PROJECT_DIR$/43435(2).txt" />
-        <option value="$PROJECT_DIR$/test.js" />
-        <option value="$PROJECT_DIR$/fine-tuning.css" />
         <option value="$PROJECT_DIR$/shCircleLoader/samples.html" />
-        <option value="$PROJECT_DIR$/fine-tuning.html" />
-        <option value="$PROJECT_DIR$/rule-edit.html" />
+        <option value="$PROJECT_DIR$/../临时下载/作业/焦点图轮播效果(源代码)/demo.html" />
         <option value="$PROJECT_DIR$/rule-edit.css" />
+        <option value="$PROJECT_DIR$/moment.js" />
+        <option value="$PROJECT_DIR$/rule-edit.html" />
+        <option value="$PROJECT_DIR$/fine-tuning.css" />
+        <option value="$PROJECT_DIR$/fine-tuning1.js" />
+        <option value="$PROJECT_DIR$/提交给老孟的/fine-tuning1.js" />
+        <option value="$PROJECT_DIR$/test.js" />
+        <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/xx.html" />
+        <option value="$PROJECT_DIR$/ss.html" />
         <option value="$PROJECT_DIR$/rule-edit.js" />
+        <option value="$PROJECT_DIR$/pp.html" />
+        <option value="$PROJECT_DIR$/pp1.html" />
+        <option value="$PROJECT_DIR$/fine-tuning.js" />
+        <option value="$PROJECT_DIR$/fine-tuning.html" />
+        <option value="$PROJECT_DIR$/提交给老孟的/fine-tuning.js" />
+        <option value="$PROJECT_DIR$/提交给老孟的/fine-tuning.html" />
+        <option value="$PROJECT_DIR$/提交给老孟的/rule-edit.js" />
       </list>
     </option>
   </component>
@@ -160,7 +240,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1920" />
     <option name="height" value="980" />
@@ -364,32 +444,38 @@
       <workItem from="1505368536690" duration="56376000" />
       <workItem from="1505617146365" duration="178000" />
       <workItem from="1505625448874" duration="109514000" />
-      <workItem from="1505899840100" duration="22162000" />
+      <workItem from="1505899840100" duration="28040000" />
+      <workItem from="1506298802863" duration="1353000" />
+      <workItem from="1506300551142" duration="52446000" />
+      <workItem from="1509000441983" duration="19582000" />
+      <workItem from="1510103267229" duration="2669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274304000" />
+    <option name="totallyTimeSpent" value="356232000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="980" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="980" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2317009" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1342812" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42691416" sideWeight="0.50605583" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0519774" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.118329465" sideWeight="0.49394417" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -449,23 +535,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fine-tuning.css" />
-    <entry file="file://$PROJECT_DIR$/../daily-new2/index.html" />
-    <entry file="file://$PROJECT_DIR$/assets/arrow.svg" />
-    <entry file="file://$PROJECT_DIR$/assets/arrow-active.svg" />
-    <entry file="file://$PROJECT_DIR$/../daily-new2/daily-new.css" />
-    <entry file="file://$PROJECT_DIR$/rule-edit.js" />
-    <entry file="file://$PROJECT_DIR$/fine-tuning.html" />
-    <entry file="file://$PROJECT_DIR$/animate.js" />
-    <entry file="file://$PROJECT_DIR$/assets/arrow.svg" />
-    <entry file="file://$PROJECT_DIR$/assets/arrow-active.svg" />
-    <entry file="file://$PROJECT_DIR$/fine-tuning.css" />
-    <entry file="file://$PROJECT_DIR$/assets/arrow-active.svg" />
-    <entry file="file://$PROJECT_DIR$/../daily-new2/assets/arrow.svg" />
-    <entry file="file://$PROJECT_DIR$/../daily-new2/daily-new.css" />
-    <entry file="file://$PROJECT_DIR$/../daily-new2/animate.js" />
-    <entry file="file://$PROJECT_DIR$/../daily-new2/接口文档1.txt" />
-    <entry file="file://$PROJECT_DIR$/../daily-new2/接口文档2.txt" />
     <entry file="file://$PROJECT_DIR$/../daily-new2/index1.html" />
     <entry file="file://$PROJECT_DIR$/../daily-new2/index.html" />
     <entry file="file://$PROJECT_DIR$/接口文档1.txt" />
@@ -474,21 +543,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1671#1719#0" expanded="false" />
-            <element signature="e#2206#7071#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.html" />
     <entry file="file://$PROJECT_DIR$/js/tmpl/cleaning.ejs" />
     <entry file="file://$PROJECT_DIR$/js/ejs.min.js" />
     <entry file="file://$PROJECT_DIR$/dailyjs/ejs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-175">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -526,45 +589,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/edit.html" />
     <entry file="file://$PROJECT_DIR$/my.ejs" />
-    <entry file="file://$PROJECT_DIR$/animate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="93" column="28" lean-forward="true" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
-          <folding>
-            <element signature="n#!!block;n#getCurrentArgs#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dailyjs/ejs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-830">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="2901" column="45" lean-forward="false" selection-start-line="2901" selection-start-column="45" selection-end-line="2901" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/43435(2).txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="64" lean-forward="true" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fine-tuning.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="74" column="13" lean-forward="false" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -572,78 +600,215 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fine-tuning.html">
+    <entry file="file://$PROJECT_DIR$/jedate/jquery.jedate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="108" column="78" lean-forward="false" selection-start-line="108" selection-start-column="78" selection-end-line="108" selection-end-column="78" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#7127#11490#0" expanded="false" />
-            <element signature="e#7483#8431#0" expanded="false" />
-            <element signature="e#8464#9898#0" expanded="false" />
-            <element signature="e#10005#10571#0" expanded="false" />
-            <element signature="e#10618#11021#0" expanded="false" />
-            <element signature="e#11070#11473#0" expanded="false" />
-            <element signature="e#11659#11946#0" expanded="false" />
-            <element signature="e#11961#12257#0" expanded="false" />
-            <element signature="e#13512#17871#0" expanded="false" />
-            <element signature="e#13864#14812#0" expanded="false" />
-            <element signature="e#14845#16279#0" expanded="false" />
-            <element signature="e#16386#16952#0" expanded="false" />
-            <element signature="e#16999#17402#0" expanded="false" />
-            <element signature="e#17451#17854#0" expanded="false" />
-            <element signature="e#17992#18855#0" expanded="false" />
-            <element signature="e#20340#21254#0" expanded="false" />
-            <element signature="e#21285#22659#0" expanded="false" />
-            <element signature="e#22762#23300#0" expanded="false" />
-            <element signature="e#23345#23728#0" expanded="false" />
-            <element signature="e#23775#24158#0" expanded="false" />
-            <element signature="n#script#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1505972119000" expanded="true" signature="6081:6191" ph="..." />
-            <marker date="1505972119000" expanded="true" signature="12475:12585" ph="..." />
-            <marker date="1505972119000" expanded="true" signature="18517:18568" ph="..." />
-            <marker date="1505972119000" expanded="true" signature="18621:18672" ph="..." />
-            <marker date="1505972119000" expanded="true" signature="18731:18770" ph="..." />
-            <marker date="1505972119000" expanded="true" signature="19135:19245" ph="..." />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../临时下载/作业/焦点图轮播效果(源代码)/demo.html" />
+    <entry file="file://$PROJECT_DIR$/rule-edit.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="178" column="3" lean-forward="false" selection-start-line="178" selection-start-column="3" selection-end-line="183" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moment.js" />
+    <entry file="file://$PROJECT_DIR$/fine-tuning.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="363" column="26" lean-forward="false" selection-start-line="363" selection-start-column="26" selection-end-line="363" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rule-edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-485">
-          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#6;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#7;n#head#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#details#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#summary#0;n#details#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="216">
+          <caret line="164" column="87" lean-forward="false" selection-start-line="164" selection-start-column="87" selection-end-line="164" selection-end-column="87" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rule-edit.css">
+    <entry file="file://$PROJECT_DIR$/提交给老孟的/rule-edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="249" column="25" lean-forward="false" selection-start-line="249" selection-start-column="25" selection-end-line="249" selection-end-column="25" />
+        <state relative-caret-position="-1767">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/提交给老孟的/fine-tuning1.js" />
+    <entry file="file://$PROJECT_DIR$/提交给老孟的/rule-edit.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2463">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.js" />
+    <entry file="file://$PROJECT_DIR$/test.html" />
+    <entry file="file://$PROJECT_DIR$/xx.html" />
+    <entry file="file://$PROJECT_DIR$/ss.html" />
+    <entry file="file://$PROJECT_DIR$/pp.html" />
+    <entry file="file://$PROJECT_DIR$/pp1.html" />
+    <entry file="file://$PROJECT_DIR$/animate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1320">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/rule-edit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="248" column="47" lean-forward="true" selection-start-line="248" selection-start-column="47" selection-end-line="248" selection-end-column="47" />
+        <state relative-caret-position="250">
+          <caret line="261" column="11" lean-forward="false" selection-start-line="261" selection-start-column="8" selection-end-line="261" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fine-tuning1.js" />
+    <entry file="file://$PROJECT_DIR$/提交给老孟的/fine-tuning.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/提交给老孟的/animate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-534">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/提交给老孟的/rule-edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="433" column="23" lean-forward="false" selection-start-line="433" selection-start-column="23" selection-end-line="433" selection-end-column="23" />
+          <caret line="435" column="23" lean-forward="false" selection-start-line="435" selection-start-column="23" selection-end-line="435" selection-end-column="23" />
+          <caret line="447" column="40" lean-forward="false" selection-start-line="447" selection-start-column="40" selection-end-line="447" selection-end-column="40" />
+          <caret line="52" column="11" lean-forward="false" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+          <caret line="64" column="10" lean-forward="false" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/提交给老孟的/fine-tuning.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="138" column="17" lean-forward="false" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
+          <caret line="165" column="10" lean-forward="false" selection-start-line="165" selection-start-column="10" selection-end-line="165" selection-end-column="10" />
+          <caret line="203" column="10" lean-forward="false" selection-start-line="203" selection-start-column="10" selection-end-line="203" selection-end-column="10" />
+          <caret line="221" column="17" lean-forward="false" selection-start-line="221" selection-start-column="17" selection-end-line="221" selection-end-column="17" />
+          <caret line="254" column="12" lean-forward="false" selection-start-line="254" selection-start-column="12" selection-end-line="254" selection-end-column="12" />
+          <caret line="279" column="15" lean-forward="false" selection-start-line="279" selection-start-column="15" selection-end-line="279" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/提交给老孟的/fine-tuning.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="167" column="17" lean-forward="false" selection-start-line="167" selection-start-column="17" selection-end-line="167" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fine-tuning.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="173" column="35" lean-forward="false" selection-start-line="173" selection-start-column="35" selection-end-line="173" selection-end-column="35" />
           <folding>
-            <element signature="e#1671#1719#0" expanded="false" />
-            <element signature="e#2206#7071#0" expanded="false" />
+            <element signature="n#script#5;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/43435(2).txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="57" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fine-tuning.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="165" column="91" lean-forward="true" selection-start-line="165" selection-start-column="91" selection-end-line="165" selection-end-column="91" />
+          <folding>
+            <element signature="e#95#138#0" expanded="false" />
+            <element signature="e#167#213#0" expanded="false" />
+            <element signature="n#!!block;n#doChange#0;n#!!block;n#processItem#0" expanded="false" />
+            <element signature="e#329#957#0" expanded="false" />
+            <element signature="e#472#519#0" expanded="false" />
+            <element signature="e#554#737#0" expanded="false" />
+            <element signature="e#982#2951#0" expanded="false" />
+            <element signature="e#1027#1295#0" expanded="false" />
+            <element signature="e#1124#1220#0" expanded="false" />
+            <element signature="e#1341#1540#0" expanded="false" />
+            <element signature="e#1580#1637#0" expanded="false" />
+            <element signature="e#1684#2442#0" expanded="false" />
+            <element signature="e#1937#1984#0" expanded="false" />
+            <element signature="e#1988#2436#0" expanded="false" />
+            <element signature="e#2049#2428#0" expanded="false" />
+            <element signature="e#2481#2946#0" expanded="false" />
+            <element signature="e#2504#2584#0" expanded="false" />
+            <element signature="e#2660#2712#0" expanded="false" />
+            <element signature="e#2734#2786#0" expanded="false" />
+            <element signature="e#3032#3406#0" expanded="false" />
+            <element signature="e#3122#3400#0" expanded="false" />
+            <element signature="e#3157#3394#0" expanded="false" />
+            <element signature="e#3238#3293#0" expanded="false" />
+            <element signature="e#3328#3386#0" expanded="false" />
+            <element signature="e#3461#3598#0" expanded="false" />
+            <element signature="e#3488#3594#0" expanded="false" />
+            <element signature="e#3630#3893#0" expanded="false" />
+            <element signature="e#3724#3770#0" expanded="false" />
+            <element signature="e#3801#3851#0" expanded="false" />
+            <element signature="e#3928#4191#0" expanded="false" />
+            <element signature="e#4023#4072#0" expanded="false" />
+            <element signature="e#4102#4149#0" expanded="false" />
+            <element signature="e#4772#5515#0" expanded="false" />
+            <element signature="e#4921#5509#0" expanded="false" />
+            <element signature="e#4993#5508#0" expanded="false" />
+            <element signature="e#5177#5330#0" expanded="false" />
+            <element signature="e#5367#5472#0" expanded="false" />
+            <element signature="e#5532#5559#0" expanded="false" />
+            <element signature="e#5733#6891#0" expanded="false" />
+            <element signature="e#5925#6041#0" expanded="false" />
+            <element signature="e#6084#6315#0" expanded="false" />
+            <element signature="e#6352#6463#0" expanded="false" />
+            <element signature="e#6506#6539#0" expanded="false" />
+            <element signature="e#6595#6776#0" expanded="false" />
+            <element signature="e#6638#6701#0" expanded="false" />
+            <element signature="e#6706#6770#0" expanded="false" />
+            <element signature="e#6813#6886#0" expanded="false" />
+            <element signature="e#7067#7149#0" expanded="false" />
+            <element signature="e#7283#8264#0" expanded="false" />
+            <element signature="e#7744#8258#0" expanded="false" />
+            <element signature="e#7816#8257#0" expanded="false" />
+            <element signature="e#7932#8085#0" expanded="false" />
+            <element signature="e#8122#8227#0" expanded="false" />
+            <element signature="e#8338#9337#0" expanded="false" />
+            <element signature="e#8437#8457#0" expanded="false" />
+            <element signature="e#8526#8566#0" expanded="false" />
+            <element signature="e#8575#9333#0" expanded="false" />
+            <element signature="e#8752#9332#0" expanded="false" />
+            <element signature="e#8785#9325#0" expanded="false" />
+            <element signature="e#9395#10355#0" expanded="false" />
+            <element signature="e#9905#10352#0" expanded="false" />
+            <element signature="e#9974#10348#0" expanded="false" />
+            <element signature="e#10041#10186#0" expanded="false" />
+            <element signature="e#10221#10322#0" expanded="false" />
+            <marker date="1509328029000" expanded="false" signature="4597:4707" ph="..." />
+            <marker date="1509328029000" expanded="false" signature="7336:7446" ph="..." />
+            <marker date="1509328029000" expanded="false" signature="9017:9068" ph="..." />
+            <marker date="1509328029000" expanded="false" signature="9133:9184" ph="..." />
+            <marker date="1509328029000" expanded="false" signature="9237:9276" ph="..." />
+            <marker date="1509328029000" expanded="false" signature="9583:9693" ph="..." />
           </folding>
         </state>
       </provider>

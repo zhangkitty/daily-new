@@ -165,7 +165,7 @@
       }
       data = data.map((v,k)=>{return {k,v}})
       data = JSON.stringify(data)
-      var url='http://product1.mywayectest.org/admin27/daily_new_manage.php?act=updateGoodsSort&date='+time+'&site_uid='+site+''
+      var url='../daily_new_manage.php?act=updateGoodsSort&date='+time+'&site_uid='+site+''
       $.ajax({
         type: "POST",
         url: url,

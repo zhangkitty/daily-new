@@ -50,7 +50,7 @@ if(xx =='rule_edit_page'){
   $('body').append('<div id="shclDefault" style="height: 100px;width: 100px;position: absolute;z-index: 1000;left: 50%;top: 50%;transform: translate(-50%,-50%)"></div>')
   $('#shclDefault').shCircleLoader();
   $.get({
-    url:'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=edit_rule&rule_id='+rule_id+'',
+    url:'../daily_new_manage.php?act=edit_rule&rule_id='+rule_id+'',
     dataType:'json',
     success: function (result) {
       $('#shclDefault').remove();
@@ -62,7 +62,7 @@ if(xx =='rule_edit_page'){
 }
 
 $.get({
-  url: "http://product1.mywayectest.org/admin27/daily_new_manage.php?act=add_rule",
+  url: "../daily_new_manage.php?act=add_rule",
   dataType:"json",
   success: function(result){
     result ={
@@ -431,9 +431,9 @@ $.get({
         $(e.target).text('保存中..')
         $(e.target).attr('disabled',true);
         if(xx!='rule_edit_page'){
-          var url = 'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=insert_rule&rule_name='+rule_name+''
+          var url = '../daily_new_manage.php?act=insert_rule&rule_name='+rule_name+''
         }else {
-          var url = 'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=update_rule&rule_id='+rule_id+''
+          var url = '../daily_new_manage.php?act=update_rule&rule_id='+rule_id+''
         }
         $.ajax({
           type: "POST",
@@ -445,7 +445,7 @@ $.get({
             $(e.target).attr('disabled',false);
             if(reslut=='ok'){
               alert('success')
-              window.location.href = 'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=get_rule_list'
+              window.location.href = '../daily_new_manage.php?act=get_rule_list'
             }else{
               alert('fail')
             }
