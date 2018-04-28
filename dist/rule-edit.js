@@ -65,38 +65,8 @@ $.get({
   url: "admin27/daily_new_manage.php?act=add_rule",
   dataType:"json",
   success: function(result){
-    const Arr = result.filter(value => value.module_id===2)[0].detail
-    const tempArr = Arr.map(
-        v=>Object.assign({},v, {'detail':[]})
-    )
-    const temp = tempArr.filter(v=>v.parent_id==="0")
-
-    function pushDataInDetail(Detail) {
-      Detail.map(v=>{
-        tempArr.map(i=>{
-          if(i.parent_id===v.cat_id){
-            v.detail.push(i)
-          }
-        })
-        if(v.detail.length>0){
-          pushDataInDetail(v.detail)
-        }
-        return v
-      })
-    }
-
-    pushDataInDetail(temp)
-
-    const lastData = result.map(value => {
-      if(value.module_id===2){
-        return Object.assign({},value,{
-          detail:temp
-        })
-      }
-      return value
-    })
     result ={
-      detail:lastData,
+      detail:result,
       rule_name:"",
     }
     var rawData = transformData(result);
@@ -251,8 +221,6 @@ $.get({
       var templateTop2 = ejs.compile($('#rule_name—top-2').html());
       var templateTop3 = ejs.compile($('#rule_name—top-3').html());
       var templateTop4 = ejs.compile($('#rule_name—top-4').html());
-
-      var templateTop6 = ejs.compile($('#rule_name—top-6').html());
       rawData.detail.forEach(function (t) {
         $topRuleAdd.append($(`<li data-rule-crumb="${t.crumb.join(',')}">${t.module_name}</li>`))
       });

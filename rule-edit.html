@@ -1,11 +1,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="rule-edit.css">
+    <link rel="stylesheet" href="./rule-edit.css">
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="./shCircleLoader/jquery.shCircleLoader.js" type="text/javascript"></script>
-    <script src="dailyjs/ejs.js"></script>
+    <script src="./dailyjs/ejs.js"></script>
     <style>
         body {
             width: 1200px;
@@ -119,6 +119,25 @@
             </ul>
 
         </article>
+    </script>
+    <script id="rule_name-top-6" type="text/x-ejs-template">
+        <article class="top-rule-6">
+            <header>
+                <%= name %>
+                <span class="close-btn"></span>
+            </header>
+            <ul class="rule-detail-mid">
+                <li>
+                    <select class="selectclassification" name="" data-rule-crumb="<%= crumb.join(',') %>">
+                        <option   value="选择二级分类" selected>选择二级分类</option>
+                        <%detail.forEach(function(t){%>
+                        <option value=<%=t.crumb.join(',') %> ><%=t.name%></option>
+                        <%})%>
+                    </select>
+                </li>
+            </ul>
+        </article>
+
     </script>
     <script id="rule_name—top-3" type="text/x-ejs-template">
         <article draggable="true" class="top-rule" data-value="<%= crumb.join(',') %>"  data-dnd-crumb="<%= crumb.slice(0, -1).join(',') %>">
