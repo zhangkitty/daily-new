@@ -251,8 +251,9 @@ $.get({
       var templateTop2 = ejs.compile($('#rule_name—top-2').html());
       var templateTop3 = ejs.compile($('#rule_name—top-3').html());
       var templateTop4 = ejs.compile($('#rule_name—top-4').html());
+      var templateTop6 = ejs.compile($('#rule_name-top-6').html());
+      var templateTop7 = ejs.compile($('#rule_name-top-7').html());
 
-      var templateTop6 = ejs.compile($('#rule_name—top-6').html());
       rawData.detail.forEach(function (t) {
         $topRuleAdd.append($(`<li data-rule-crumb="${t.crumb.join(',')}">${t.module_name}</li>`))
       });
@@ -286,10 +287,37 @@ $.get({
           var crumb = $(this).val().split(',');
           var dt = findByCrumb(rawData, crumb);
           $(this).find(`option[value="${$(this).val()}"]`).prop('disabled', true);
-          $(this).parent().before(templateTop3(dt));
+          $(this).parent().before(templateTop6(dt));
         }
         $('.selectclassification').val("选择一级分类")
       });
+
+      $(document).on('change', '.selectclassification2',function (e) {
+        if($(this).val()){
+          var crumb = $(this).val().split(',')
+          var dt = findByCrumb(rawData, crumb);
+          $(this).before(templateTop7(dt));
+          $('.selectclassification2').val("选择二级分类")
+          $(this).hide();
+          $(this).find(`option[value="${$(this).val()}"]`).prop('disabled', false);
+        }
+
+      })
+
+      $(document).on('change', '.selectclassification3',function (e) {
+        if($(this).val()){
+          var crumb = $(this).val().split(',')
+          var dt = findByCrumb(rawData, crumb);
+          $(this).before(templateTop3(dt));
+          $('.selectclassification3').val("选择三级分类")
+          $(this).hide();
+        }
+      })
+
+
+
+
+
 
       $(document).on('click', '.top-rule .top-rule-add button', function (e) {
         $(this).parent().toggleClass('active');
@@ -426,6 +454,8 @@ $.get({
 
       $(document).on('click', '.littleclose', function () {
         //$(this).parent().parent().css('display', 'none')
+        $(this).parent().parent().next().show()
+        $(this).parent().parent().next().attr('class')
         $(this).parent().parent().remove()
         var tempcontent = $(this).parent().text().trim()
         $('.selectclassification option:contains(' + tempcontent + ')').prop('disabled', false);

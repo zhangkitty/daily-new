@@ -140,6 +140,23 @@ details {
     margin-top: 30px;
 }
 
+.selectclassification2{
+    width:150px;
+    height: 30px;
+}
+
+.selectclassification3{
+    width:150px;
+    height: 30px;
+}
+
+.selectclassification4{
+    width:150px;
+    height: 30px;
+}
+
+
+
 .cat-rule-title {
     font-size: 12px;
     font-weight: normal;
@@ -153,7 +170,6 @@ details {
     border-radius: .4em;
     height: 28px;
     line-height: 30px;
-    margin-left: 60px;
     margin-right: 20px;
     flex: 0 0 132px;
     padding-left: 16px;
@@ -245,7 +261,6 @@ header {
     display: flex;
     align-items: start;
     padding: 0px 0px;
-    margin-top: 20px;
     margin-bottom: 10px;
     padding-bottom: 10px;
 }

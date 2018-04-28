@@ -120,25 +120,6 @@
 
         </article>
     </script>
-    <script id="rule_name-top-6" type="text/x-ejs-template">
-        <article class="top-rule-6">
-            <header>
-                <%= name %>
-                <span class="close-btn"></span>
-            </header>
-            <ul class="rule-detail-mid">
-                <li>
-                    <select class="selectclassification" name="" data-rule-crumb="<%= crumb.join(',') %>">
-                        <option   value="选择二级分类" selected>选择二级分类</option>
-                        <%detail.forEach(function(t){%>
-                        <option value=<%=t.crumb.join(',') %> ><%=t.name%></option>
-                        <%})%>
-                    </select>
-                </li>
-            </ul>
-        </article>
-
-    </script>
     <script id="rule_name—top-3" type="text/x-ejs-template">
         <article draggable="true" class="top-rule" data-value="<%= crumb.join(',') %>"  data-dnd-crumb="<%= crumb.slice(0, -1).join(',') %>">
             <div class="cat-rule-title">
@@ -172,6 +153,42 @@
         <ul class="top-rule-add">
             <button type="button"></button>
         </ul>
+    </script>
+
+    <script id="rule_name-top-6" type="text/x-ejs-template">
+        <article class="top-rule" data-dnd-crumb="<%= crumb.slice(0, -1).join(',') %>">
+            <div class="cat-rule-title">
+                <%= name %>
+                <div class="littleclose"></div>
+            </div>
+            <%if (detail) {%>
+            <select  style="margin-top: 0px;" class="selectclassification2" name="" data-rule-crumb="<%= crumb.join(',') %>">
+                <option   value="选择二级分类" selected>选择二级分类</option>
+                <%detail.forEach(function(t){%>
+                <option value=<%=t.crumb.join(',') %> ><%=t.name%></option>
+                <%})%>
+            </select>
+            <%}%>
+        </article>
+
+    </script>
+
+    <script id="rule_name-top-7" type="text/x-ejs-template">
+        <article  class="top-rule" data-dnd-crumb="<%= crumb.slice(0, -1).join(',') %>">
+            <div class="cat-rule-title">
+                <%= name %>
+                <div class="littleclose"></div>
+            </div>
+            <%if (detail) {%>
+            <select  style="margin-top: 0px;" class="selectclassification3" name="" data-rule-crumb="<%= crumb.join(',') %>">
+                <option   value="选择三级分类" selected>选择三级分类</option>
+                <%detail.forEach(function(t){%>
+                <option value=<%=t.crumb.join(',') %> ><%=t.name%></option>
+                <%})%>
+            </select>
+            <%}%>
+        </article>
+
     </script>
 
 </head>
