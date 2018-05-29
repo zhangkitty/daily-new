@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>自定义编辑</title>
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://statics.sheinside.cn/common/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://statics.sheinside.cn/common/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://statics.sheinside.cn/common/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="./shCircleLoader/jquery.shCircleLoader.js" type="text/javascript"></script>
     <script src="./jedate/jquery.jedate.js"></script>
     <script src="dailyjs/ejs.js"></script>
     <link rel="stylesheet" href="./jedate/skin/jedate.css">
     <link rel="stylesheet" href="fine-tuning.css">
     <script id="rule-top" type="text/x-ejs-template">
-        <article class="product-item" data-value="<%=goods_id%>" >
+        <article class="product-item" data-value="<%=goods_id%>" id="<%=kitty%>">
             <h4>
                 <%= goods_sn %>
             </h4>
@@ -31,9 +31,15 @@
                         <%=plate_name%>&nbsp
                     </div>
                     <div class="product-description-item" data-title="一级分类">
-                        <%=parent_name%>&nbsp
+                        <%=parent_name_two%>&nbsp
                     </div>
                     <div class="product-description-item" data-title="二级分类">
+                        <%=parent_name_one%>&nbsp
+                    </div>
+                    <div class="product-description-item" data-title="三级分类">
+                        <%=parent_name%>&nbsp
+                    </div>
+                    <div class="product-description-item" data-title="四级分类">
                         <%=cat_name%>&nbsp
                     </div>
                     <div class="product-description-item" data-title="图片来源">
@@ -64,6 +70,24 @@
                 <li data-value=<%=t%>><input type="checkbox" id='<%=idx%>'><label for='<%=idx%>'><%=t%></label></li>
             <%})%>
         </ul>
+    </script>
+
+    <script id="page" type="text/x-ejs-template">
+        <div class="page">
+            <div class="page-margin">
+                <span>第</span>
+                <select class="sel" onchange="run(this.value)">
+                    <%for(i=1;i<=allPages;i++){%>
+                    <option value="<%=i%>"><%=i%></option>
+                    <%} %>
+                </select>
+                <span>页</span>
+            </div>
+            <div class="page-margin xiayiye">下一页</div>
+            <div class="page-margin shangyiye">上一页</div>
+            <div class="page-margin moye">末页</div>
+            <div class="page-margin shouye">首页</div>
+        </div>
     </script>
 </head>
 <body>
@@ -133,6 +157,7 @@
     </form>
 </header>
 
+
 <div class="products">
 </div>
 
@@ -165,7 +190,7 @@
       }
       data = data.map((v,k)=>{return {k,v}})
       data = JSON.stringify(data)
-      var url='http://product1.mywayectest.org/admin27/daily_new_manage.php?act=updateGoodsSort&date='+time+'&site_uid='+site+''
+      var url='../daily_new_manage.php?act=updateGoodsSort&date='+time+'&site_uid='+site+''
       $.ajax({
         type: "POST",
         url: url,

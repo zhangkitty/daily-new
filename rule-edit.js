@@ -1,3 +1,12 @@
+var crumbCount = {};
+
+function addCount(crumbName) {
+  if (!crumbCount.hasOwnProperty(crumbName)) {
+    crumbCount[crumbName] = 0;
+  } else {
+    crumbCount[crumbName] += 1;
+  }
+}
 
 function editCb(result) {
   var rawData1 = transformData(result);
@@ -7,6 +16,30 @@ function editCb(result) {
       $('li[data-rule-crumb="' +context+'"]').trigger('click')
       $('input[data-val="' + context +'"]').trigger('click')
       $('select[data-rule-crumb="' + item.crumb.slice(0, -1).join(',')+'"]').val(context).change();
+      if(context==2){
+        var temp= [context]
+
+        item.detail.forEach(function (v){
+
+          v.cat_id.map(value=>temp.push(value.id))
+          for (i=1;i<temp.length;i++){
+            var crumbName = temp.slice(0,i+1).join(',')
+            addCount(crumbName)
+
+            console.log(crumbName, crumbCount[crumbName])
+            $('select[data-rule-crumb="' + temp.slice(0,i).join(',')+'"]')
+                .eq(crumbCount[temp.slice(0,i).join(',')] || 0)
+                .val(temp.slice(0,i+1).join(',')).change()
+          }
+          v.cat_children.map(v=>{
+            temp.push(v.id)
+            $('input[data-val="'+temp.join(',')+'"]').eq(crumbCount[crumbName]).trigger('click')
+            temp.pop();
+          })
+          temp=[context]
+        })
+
+      }
 
       if (item.detail && item.detail.length) {
         traverseTrigger(item.detail);
@@ -50,7 +83,7 @@ if(xx =='rule_edit_page'){
   $('body').append('<div id="shclDefault" style="height: 100px;width: 100px;position: absolute;z-index: 1000;left: 50%;top: 50%;transform: translate(-50%,-50%)"></div>')
   $('#shclDefault').shCircleLoader();
   $.get({
-    url:'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=edit_rule&rule_id='+rule_id+'',
+    url:'admin27/daily_new_manage.php?act=edit_rule&rule_id='+rule_id+'',
     dataType:'json',
     success: function (result) {
       $('#shclDefault').remove();
@@ -65,6 +98,7 @@ $.get({
   url: "admin27/daily_new_manage.php?act=add_rule",
   dataType:"json",
   success: function(result){
+    const zcc = result;
     const Arr = result.filter(value => value.module_id===2)[0].detail
     const tempArr = Arr.map(
         v=>Object.assign({},v, {'detail':[]})
@@ -222,6 +256,7 @@ $.get({
       }, 16);
     }
     function submitData() {
+
       var rule_name = $('#titlename')[0].value
       var allData = $('[data-value]');
       var result = {
@@ -235,8 +270,64 @@ $.get({
           detail: []
         }));
       });
+
+
+
+      var detail = $('.classification').map(function () {
+        var catChildrenIds = $(this).find('.rule-last-level[data-value]').map(function () {
+          return $(this).attr('data-value');
+        });
+        if (catChildrenIds.length) {
+          const catId = catChildrenIds[0].split(',').slice(0, -1).join(',');
+          return {
+            cat_id: catId.split(",").slice(1).join(","),
+            cat_children: [].slice.call(catChildrenIds.map(function (_, item) {
+              return item.slice(catId.length + 1);
+            })).map(v=>({id:v}))
+          }
+        } else {
+          const $ruleSelect = $(this).find('select');
+
+          var ruleSelectParent = $ruleSelect.attr('data-rule-crumb');
+          if($(this).find('button').html()){
+            ruleSelectParent = $(this).find('button').attr('data-dnd-crumb')
+          }
+          const selfVal = $ruleSelect.val();
+          if (selfVal.indexOf('选择') > -1) {
+            return {
+              cat_id: ruleSelectParent.split(",").slice(1).join(","),
+              cat_children: [],
+            }
+          } else {
+            return {
+              cat_id: selfVal.split(",").slice(1).join(","),
+              cat_children: [],
+            }
+          }
+
+        }
+      });
+      var tempArr =  [].slice.call(detail);
+
+      var tempDetail =  result.detail.map(v=>{
+        if(v.module_id!==2){
+          return v
+        }else{
+          return Object.assign({},v,{
+            detail:tempArr
+          })
+        }
+      })
+
+      var result = {
+        detail:tempDetail,
+        rule_name : rule_name,
+      }
       return result;
     }
+
+
+
     $(function () {
 
       var draggingLevel;
@@ -286,7 +377,7 @@ $.get({
         if($(this).val()){
           var crumb = $(this).val().split(',');
           var dt = findByCrumb(rawData, crumb);
-          $(this).find(`option[value="${$(this).val()}"]`).prop('disabled', true);
+          // $(this).find(`option[value="${$(this).val()}"]`).prop('disabled', true);
           $(this).parent().before(templateTop6(dt));
         }
         $('.selectclassification').val("选择一级分类")
@@ -313,8 +404,6 @@ $.get({
           $(this).hide();
         }
       })
-
-
 
 
 
@@ -468,6 +557,7 @@ $.get({
       $('.title button.btn').click(function (e) {
         e.preventDefault()
         var data = submitData()
+
         function printAttr(node) {
           if (node instanceof Array) {
             for (var i in node) {
@@ -484,7 +574,7 @@ $.get({
           }
         }
 
-        printAttr(data)
+        // printAttr(data)
         var rule_name = $('#titlename')[0].value
         if(!rule_name){
           alert('规则名不能为空')
@@ -493,9 +583,9 @@ $.get({
         $(e.target).text('保存中..')
         $(e.target).attr('disabled',true);
         if(xx!='rule_edit_page'){
-          var url = 'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=insert_rule&rule_name='+rule_name+''
+          var url = 'admin27/daily_new_manage.php?act=insert_rule&rule_name='+rule_name+''
         }else {
-          var url = 'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=update_rule&rule_id='+rule_id+''
+          var url = 'admin27/daily_new_manage.php?act=update_rule&rule_id='+rule_id+''
         }
         $.ajax({
           type: "POST",
@@ -507,7 +597,7 @@ $.get({
             $(e.target).attr('disabled',false);
             if(reslut=='ok'){
               alert('success')
-              window.location.href = 'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=get_rule_list'
+              window.location.href = 'admin27/daily_new_manage.php?act=get_rule_list'
             }else{
               alert('fail')
             }

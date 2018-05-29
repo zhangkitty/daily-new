@@ -30,6 +30,7 @@ http {
     # 设定负载均衡后台服务器列表
     upstream  backend  {
       #ip_hash;
+      keepalive 32;
       server 50.23.190.57;
     }
     include       mime.types;
@@ -37,7 +38,7 @@ http {
     log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
                       '$status $body_bytes_sent "$http_referer" '
                       '"$http_user_agent" "$http_x_forwarded_for"';
-    access_log  $STATIC_PATH/nginx/logs/access.log main;
+    access_log  ${staticFilePath}/nginx/logs/access.log main;
     sendfile        on;
     # tcp_nopush     on;
     keepalive_timeout  65;
@@ -54,9 +55,9 @@ http {
     client_max_body_size   10m;
     client_body_buffer_size   64k;
     client_body_temp_path ${staticFilePath}/nginx/temp 1 2;
-    proxy_connect_timeout   75;
-    proxy_send_timeout   75;
-    proxy_read_timeout   75;
+    proxy_connect_timeout   200;
+    proxy_send_timeout   200;
+    proxy_read_timeout   200;
     proxy_buffer_size   4k;
     proxy_buffers   4 32k;
     proxy_busy_buffers_size   64k;
@@ -80,9 +81,10 @@ http {
         }
         location = / {
              proxy_pass        http://backend;
-            proxy_redirect off;
             # 后端的Web服务器可以通过X-Forwarded-For获取用户真实IP
+            proxy_http_version 1.1;
             proxy_set_header  Host  ${propxyPath};
+            proxy_set_header Connection "";
         }
     }
 

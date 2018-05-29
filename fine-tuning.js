@@ -23,6 +23,14 @@ function processItem() {
       $ctx.find('.product-image-no').text(target + 1);
       $ctx.find('input').val(target + 1);
       $ctx['insert' + (op > 0 ? 'After' : 'Before')]($('article.product-item:nth-of-type(' + (target + 1) + ')'));
+
+      for(var i=0;i<$('.product-item').length;i++){
+        if(i>=(page-1)*360&&i<page*360){
+          $('.product-item').eq(i).css('display','block');
+        } else{
+          $('.product-item').eq(i).css('display','none');
+        }
+      }
     });
   }
   const actions = {
@@ -47,12 +55,20 @@ function processItem() {
       forwardstep.push([from,target,this])
       if(e.altKey||a){
         doChange(from, target, this);
+        // var fromdisplay = $('.product-item').eq(from).css('display')
+        // var targetdisplay= $('.product-item').eq(target).css('display')
+        // $('.product-item').eq(from).css('display',targetdisplay)
+        // $('.product-item').eq(target).css('display',fromdisplay)
+
       }else{
         if(Math.abs(target)<$('.products  article').length){
           var a = $(this).clone(true)
           a.find('.product-image-no').text(target+1)
           a.find('input').val(target+1)
           var b = $('.product-item').eq(target).clone(true)
+          var bdisplay = b.css('display')
+          a.css('display',bdisplay)
+          b.css('display','block')
           b.find('.product-image-no').text(from+1)
           b.find('input').val(from+1)
           $(this).replaceWith(b)
@@ -122,6 +138,19 @@ function processItem() {
   })
 };
 
+function changePage(len,page) {
+  for (var i=0;i<len;i++){
+    var str = `id${i}`
+    if(i<page*360&&i>=(page-1)*360){
+      // $('#'+str).show()
+      $('.product-item').eq(i).show()
+    }else {
+      // $('#'+str).hide()
+      $('.product-item').eq(i).hide()
+    }
+  }
+}
+
 
 (function ($) {
   $.getUrlParam = function (name) {
@@ -136,7 +165,7 @@ if(urldate&&urlsite_uid){
   $('body').append('<div id="shclDefault" style="height: 100px;width: 100px;position: absolute;z-index: 1000;left: 50%;top: 50%;transform: translate(-50%,-50%)"></div>')
   $('#shclDefault').shCircleLoader();
   $(function () {
-    var url = 'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=getDetailInfo&date='+urldate+'&site_uid='+urlsite_uid+''
+    var url = '../daily_new_manage.php?act=getDetailInfo&date='+urldate+'&site_uid='+urlsite_uid+''
     $.get({
       url: url,
       dataType:"json",
@@ -162,8 +191,19 @@ var start = {
   format: 'YYYY-MM-DD',
 };
 $("#time").jeDate(start);
+
+
+
 $.get({
-  url: "http://product1.mywayectest.org/admin27/daily_new_manage.php?act=get_all_site_uid",
+  url:"../daily_new_manage.php?act=get_all_category",
+  dataType:'json',
+  success:function (result) {
+    sessionStorage.setItem('all_category',JSON.stringify(result));
+  }
+})
+
+$.get({
+  url: "../daily_new_manage.php?act=get_all_site_uid",
   dataType:"json",
   success: function(result){
     var  template1 = ejs.compile($('#xiala').html())
@@ -201,7 +241,7 @@ $.get({
     })
   }});
 $.get({
-  url: "http://product1.mywayectest.org/admin27/daily_new_manage.php?act=get_all_rule",
+  url: "../daily_new_manage.php?act=get_all_rule",
   dataType:"json",
   success: function(result){
     result.map(function (t) {
@@ -219,21 +259,43 @@ $('button:contains(显示商品)').click(function (e) {
     $('.product-item').remove()
     var date = $('#time')[0].value
     var site = $('#site :selected').text()
-    var url = 'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=getDetailInfo&date='+date+'&site_uid='+site+''
+    var url = '../daily_new_manage.php?act=getDetailInfo&date='+date+'&site_uid='+site+''
     $.get({
       url: url,
       dataType:"json",
       success: function(result){
+        $('.page').remove();
+        var   all_category  = Object.values(JSON.parse(sessionStorage.getItem('all_category')));
         $('#shclDefault').remove()
         $('#rule').val(result.rule_id)
+        var mod = 0
         result.goods.map(function (t,k) {
-          var data = {...t,k:k+1}
+          if(!t.parent_name_two){
+            t.parent_name_two=""
+          }
+          if(!t.parent_name_one){
+            t.parent_name_one=""
+          }
+          var data = {...t,k:k+1,kitty:`id${k+1}`}
           var template = ejs.compile($('#rule-top').html())
           $('.products').append(template(data))
         })
         for (var i = 0; i < 3; i++){
           $('.products').append($('<div class="product-item product-item-padding">1</div>'));
         }
+        window.page = 1;
+        window.len = result.goods.length+3;
+        window.allPages = Math.floor(len/360)+1
+        window.run = function (value) {
+          page = +value;
+          changePage(len,page);
+          $('.page .sel').val(page);
+        }
+
+        var temp = ejs.compile($('#page').html())
+        $('header').after(temp(allPages))
+        $('.products').after(temp(allPages))
+        changePage(len,page)
         processItem()
       }});
   }
@@ -252,7 +314,7 @@ $('.form-item-actions .btn:nth-child(1)').click(function (e) {
     return null
   }
   $.get({
-    url: 'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=getActionRecord&date='+date+'&site_uid='+site+'',
+    url: '../daily_new_manage.php?act=getActionRecord&date='+date+'&site_uid='+site+'',
     dataType:"json",
     success: function(result){
 
@@ -277,21 +339,91 @@ $('button:contains(确认重新排序)').click(function () {
   var rule = $('#rule')[0].value
   $('body').append('<div id="shclDefault" style="height: 100px;width: 100px;position: absolute;z-index: 1000;left: 50%;top: 50%;transform: translate(-50%,-50%)"></div>')
   $('#shclDefault').shCircleLoader();
-  var url = 'http://product1.mywayectest.org/admin27/daily_new_manage.php?act=resetGoodsSort&date=' + date + '&site_uid=' + site + '&rule_id=' + rule + ''
+  var url = '../daily_new_manage.php?act=resetGoodsSort&date=' + date + '&site_uid=' + site + '&rule_id=' + rule + ''
   $.get({
     url: url,
     dataType: "json",
     success: function (result) {
+      $('.page').remove();
       $('#shclDefault').remove()
       result.map(function (t,k) {
-        var data = {...t,k:k+1}
+        if(!t.parent_name_two){
+          t.parent_name_two=""
+        }
+        if(!t.parent_name_one){
+          t.parent_name_one=""
+        }
+        // var data = {...t,k:k+1}
+        // var template = ejs.compile($('#rule-top').html())
+        // $('.products').append(template(data))
+
+        var data = {...t,k:k+1,kitty:`id${k+1}`}
         var template = ejs.compile($('#rule-top').html())
         $('.products').append(template(data))
       })
+      // for (var i = 0; i < 3; i++){
+      //   $('.products').append($('<div class="product-item product-item-padding">1</div>'));
+      // }
+      // processItem()
+
       for (var i = 0; i < 3; i++){
         $('.products').append($('<div class="product-item product-item-padding">1</div>'));
       }
+      window.page = 1;
+      window.len = result.length+3;
+      window.allPages = Math.floor(len/360)+1
+      window.run = function (value) {
+        page = +value;
+        changePage(len,page);
+        $('.page .sel').val(page);
+      }
+
+      var temp = ejs.compile($('#page').html())
+      $('header').after(temp(allPages))
+      $('.products').after(temp(allPages))
+      changePage(len,page)
       processItem()
     }
   })
 })
+
+
+
+$(document).on('click','.page .shouye',function () {
+  window.page=1;
+  $('.page .sel').val(page);
+  changePage(len,page)
+})
+
+
+$(document).on('click','.page .moye',function () {
+  window.page=(Math.floor(len/360)+1);
+  $('.page .sel').val(page);
+  changePage(len,page)
+})
+
+$(document).on('click','.page .shangyiye',function () {
+  if(page==1){
+    return null
+  }
+  page-=1;
+  $('.page .sel').val(page);
+  changePage(len,page)
+})
+
+
+$(document).on('click','.page .xiayiye' ,function () {
+  if((Math.floor(len/360)+1)==page){
+    return null
+  }
+  page+=1;
+  $('.page .sel').val(+page);
+  changePage(len,page)
+})
+
+
+
+
+
+
+

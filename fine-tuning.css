@@ -90,7 +90,7 @@ body {
     margin-top: 30px;
     margin-right: 10px;
     border: 1px solid #ccc;
-    width: 300px;
+    width: 300px !important;
     height: 240px;
     padding: 10px 11px;
     flex: 300px 1 0;
@@ -204,7 +204,7 @@ article.product-item:nth-last-of-type(-n + 1) .tool-right{
     vertical-align: middle;
 }
 .product-description-item + .product-description-item {
-    margin-top: 14px;
+    margin-top: 8px;
 }
 .product-description-item-btm {
     position: absolute;
@@ -362,4 +362,15 @@ article.product-item:nth-last-of-type(-n + 1) .tool-right{
 }
 .xialalistactive{
     display: inline-block;
+}
+
+.page{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: 50px;
+    line-height: 30px;
+}
+
+.page-margin{
+    margin-left: 20px;
 }
