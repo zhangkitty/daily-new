@@ -26,7 +26,6 @@ function editCb(result) {
             var crumbName = temp.slice(0,i+1).join(',')
             addCount(crumbName)
 
-            console.log(crumbName, crumbCount[crumbName])
             $('select[data-rule-crumb="' + temp.slice(0,i).join(',')+'"]')
                 .eq(crumbCount[temp.slice(0,i).join(',')] || 0)
                 .val(temp.slice(0,i+1).join(',')).change()
@@ -307,7 +306,9 @@ $.get({
 
         }
       });
-      var tempArr =  [].slice.call(detail);
+      var tempArr =  [].slice.call(detail).filter(function (value) {
+            return !!value.cat_id
+          });
 
       var tempDetail =  result.detail.map(v=>{
         if(v.module_id!==2){
@@ -318,7 +319,6 @@ $.get({
           })
         }
       })
-
       var result = {
         detail:tempDetail,
         rule_name : rule_name,
@@ -341,9 +341,7 @@ $.get({
       var templateTop = ejs.compile($('#rule_name—top').html());
       var templateTop2 = ejs.compile($('#rule_name—top-2').html());
       var templateTop3 = ejs.compile($('#rule_name—top-3').html());
-      var templateTop4 = ejs.compile($('#rule_name—top-4').html());
-      var templateTop6 = ejs.compile($('#rule_name-top-6').html());
-      var templateTop7 = ejs.compile($('#rule_name-top-7').html());
+      var templateHasDetail = ejs.compile($('#rule_name-has-detail').html());
 
       rawData.detail.forEach(function (t) {
         $topRuleAdd.append($(`<li data-rule-crumb="${t.crumb.join(',')}">${t.module_name}</li>`))
@@ -373,37 +371,41 @@ $.get({
         }
       });
 
-      $(document).on('change', '.selectclassification', function (e) {
-        if($(this).val()){
-          var crumb = $(this).val().split(',');
+      function isLast(detail) {
+        return detail.some(x => x.detail && x.detail.length);
+      }
+
+      function insertOption(level, $ctx, classname, exteranlClassName) {
+        if ($ctx.val() && String($ctx.val()) !== '-1') {
+          var crumb = $ctx.val().split(',')
           var dt = findByCrumb(rawData, crumb);
-          // $(this).find(`option[value="${$(this).val()}"]`).prop('disabled', true);
-          $(this).parent().before(templateTop6(dt));
+          dt.level = level;
+          dt.classname = classname;
+          dt.exteranlClassName = exteranlClassName || '';
+          if (dt.detail && dt.detail.length && isLast(dt.detail)) {
+            $ctx.before(templateHasDetail(dt));
+          } else {
+            $ctx.before(templateTop3(dt));
+          }
+          $ctx.hide();
         }
+      }
+
+      $(document).on('change', '.selectclassification', function (e) {
+        insertOption('二', $(this), '2', ' classification');
+        $(this).show();
         $('.selectclassification').val("选择一级分类")
       });
 
-      $(document).on('change', '.selectclassification2',function (e) {
-        if($(this).val()){
-          var crumb = $(this).val().split(',')
-          var dt = findByCrumb(rawData, crumb);
-          $(this).before(templateTop7(dt));
-          $('.selectclassification2').val("选择二级分类")
-          $(this).hide();
-          $(this).find(`option[value="${$(this).val()}"]`).prop('disabled', false);
-        }
-
+      $(document).on('change', '[data-classification=2]',function (e) {
+        insertOption('三', $(this), '3');
+        // @TODO
+        // $(this).find(`option[value="${$(this).val()}"]`).prop('disabled', false);
       })
 
-      $(document).on('change', '.selectclassification3',function (e) {
-        if($(this).val()){
-          var crumb = $(this).val().split(',')
-          var dt = findByCrumb(rawData, crumb);
-          $(this).before(templateTop3(dt));
-          $('.selectclassification3').val("选择三级分类")
-          $(this).hide();
-        }
-      })
+      $(document).on('change', '[data-classification=3]',function (e) {
+        insertOption('四', $(this), '4');
+      });
 
 
 
@@ -414,18 +416,20 @@ $.get({
 
 
       $(document).on('dragstart', 'li', function (e) {
-        $(this).css({
-          opacity: 1,
-          background: "",
-          border: "1px solid #3F4C7D",
-          'box-shadow':"0 0 4px 0 rgba(65,91,192,0.50)",
-          'border-radius':"1px",
-        });
-        draggingLevel = $(this).attr('data-dnd-crumb');
-        draggingEle = $(this);
-        // e.dataTransfer.setData('name', 'a');
-
-        e.originalEvent.dataTransfer.setData('name', 'node');
+        if (!draggingEle) {
+          $(this).css({
+            opacity: 0.5,
+            background: "rgba(65,91,192,0.50)",
+            border: "1px dashed #3F4C7D",
+            'box-shadow':"0 0 4px 0 rgba(65,91,192,0.50)",
+            'border-radius':"1px",
+          });
+          draggingEle = $(this);
+          draggingLevel = $(this).attr('data-dnd-crumb');
+          // e.dataTransfer.setData('name', 'a');
+          e.originalEvent.dataTransfer.setData('name', 'node');
+          e.stopPropagation();
+        }
       }).on('dragend', 'li', function () {
         $(this).css({
           opacity: 1,
@@ -434,31 +438,6 @@ $.get({
           'box-shadow':"",
           'border-radius':"",
         });
-      }).on('dragenter', 'li', function (e) {
-        var crb = $(this).attr('data-dnd-crumb');
-        if (crb === draggingLevel) {
-          $(this).css({
-            opacity: 1,
-            background: "",
-            border: "1px solid #3F4C7D",
-            'box-shadow':"0 0 4px 0 rgba(65,91,192,0.50)",
-            'border-radius':"1px",
-          })
-          e.originalEvent.dataTransfer.dropEffect = "move";
-        }
-      }).on('dragleave','li',function (e) {
-        var crb = $(this).attr('data-dnd-crumb');
-        if (crb === draggingLevel) {
-          $(this).css({
-            opacity: 1,
-            background: "",
-            border: "",
-            'box-shadow':"",
-            'border-radius':"",
-          })
-          e.originalEvent.dataTransfer.dropEffect = "move";
-          e.preventDefault();
-        }
       }).on('dragover', 'li', function (e) {
         var crb = $(this).attr('data-dnd-crumb');
         if (crb === draggingLevel) {
@@ -479,12 +458,14 @@ $.get({
           var $dragEle = draggingEle;
           var startIdx = draggingEle.index();
           var toIdx = $this.index();
-          doAnimation('rule-last-level', draggingEle, $this, function () {
-            if (startIdx < toIdx)
-              $this.after($dragEle);
-            else
-              $this.before($dragEle)
-          });
+          // doAnimation('rule-last-level', draggingEle, $this, function () {
+          //
+          // });
+          if (startIdx < toIdx)
+            $this.after($dragEle);
+          else
+            $this.before($dragEle)
+          draggingEle = null;
         }
       })
       $(document).on('click', 'body', function (e) {
@@ -498,7 +479,7 @@ $.get({
 
       $('.rule-detail-mid .top-rule').prop('draggable', 'true')
 
-      var topRuleSelector = '.rule-detail-mid .top-rule';
+      var topRuleSelector = '.rule-detail-mid .top-rule[draggable="true"]';
       $(document).on('dragstart', topRuleSelector, function (e) {
         $(this).css({
           opacity: 0.5,
@@ -544,6 +525,7 @@ $.get({
       $(document).on('click', '.littleclose', function () {
         //$(this).parent().parent().css('display', 'none')
         $(this).parent().parent().next().show()
+        $(this).parent().parent().next().val('-1')
         $(this).parent().parent().next().attr('class')
         $(this).parent().parent().remove()
         var tempcontent = $(this).parent().text().trim()
@@ -557,6 +539,7 @@ $.get({
       $('.title button.btn').click(function (e) {
         e.preventDefault()
         var data = submitData()
+
 
         function printAttr(node) {
           if (node instanceof Array) {
