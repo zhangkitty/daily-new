@@ -394,7 +394,7 @@ $.get({
       $(document).on('change', '.selectclassification', function (e) {
         insertOption('二', $(this), '2', ' classification');
         $(this).show();
-        $('.selectclassification').val("选择一级分类")
+        $('.selectclassification').val(-1)
       });
 
       $(document).on('change', '[data-classification=2]',function (e) {
